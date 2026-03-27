@@ -85,19 +85,19 @@ export default function App() {
   };
 
   const renderHome = () => (
-    <div className="space-y-12">
-      <section className="text-center space-y-4 py-12 relative">
+    <div className="space-y-8 md:space-y-12">
+      <section className="text-center space-y-3 md:space-y-4 py-8 md:py-12 relative">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-black tracking-widest uppercase mb-4"
+          className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 md:mb-4"
         >
           Celebrating 40+ Years of Impact
         </motion.div>
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-7xl font-serif font-bold text-cheptebo-green tracking-tight leading-tight"
+          className="text-3xl md:text-7xl font-serif font-bold text-cheptebo-green tracking-tight leading-tight"
         >
           Karibuni Cheptebo
         </motion.h1>
@@ -105,14 +105,14 @@ export default function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-xl text-emerald-700 max-w-3xl mx-auto leading-relaxed"
+          className="text-base md:text-xl text-emerald-700 max-w-3xl mx-auto leading-relaxed px-4"
         >
           Empowering the Kerio Valley through sustainable agriculture, 
           innovation, and holistic community development since 1984.
         </motion.p>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
         {[
           { id: 'shop', icon: ShoppingBag, label: 'Value-Added Shop', color: 'bg-orange-50 text-orange-700 border-orange-200', desc: 'Dried fruits, honey & juices' },
           { id: 'nursery', icon: Sprout, label: 'Tree Nursery', color: 'bg-emerald-50 text-emerald-700 border-emerald-200', desc: 'KEPHIS certified seedlings' },
@@ -125,51 +125,51 @@ export default function App() {
             whileTap={{ scale: 0.98 }}
             onClick={() => setActiveTab(dept.id as Tab)}
             className={cn(
-              "flex flex-col items-start p-8 rounded-3xl border-2 transition-all shadow-sm text-left group",
+              "flex flex-col items-start p-4 md:p-8 rounded-2xl md:rounded-3xl border-2 transition-all shadow-sm text-left group",
               dept.color
             )}
           >
-            <dept.icon className="w-10 h-10 mb-6 group-hover:scale-110 transition-transform" />
-            <span className="font-black text-xl mb-2">{dept.label}</span>
-            <span className="text-sm opacity-80">{dept.desc}</span>
+            <dept.icon className="w-6 h-6 md:w-10 md:h-10 mb-3 md:mb-6 group-hover:scale-110 transition-transform" />
+            <span className="font-black text-sm md:text-xl mb-1 md:mb-2">{dept.label}</span>
+            <span className="text-[10px] md:text-sm opacity-80 line-clamp-2">{dept.desc}</span>
           </motion.button>
         ))}
       </div>
 
       {/* Impact & Mission Section */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-white p-10 rounded-[2.5rem] border border-emerald-100 shadow-sm space-y-6">
-          <h2 className="text-3xl font-serif font-bold text-cheptebo-green">Our Mission</h2>
-          <p className="text-emerald-800 text-lg leading-relaxed">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
+        <div className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] border border-emerald-100 shadow-sm space-y-4 md:space-y-6">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold text-cheptebo-green">Our Mission</h2>
+          <p className="text-emerald-800 text-base md:text-lg leading-relaxed">
             To demonstrate and promote sustainable agricultural practices that transform lives, 
             ensuring food security and economic independence for the people of Kerio Valley.
           </p>
-          <div className="grid grid-cols-2 gap-6 pt-4">
+          <div className="grid grid-cols-2 gap-4 md:gap-6 pt-2 md:pt-4">
             <div className="space-y-1">
-              <span className="text-4xl font-serif font-bold text-cheptebo-green">350+</span>
-              <p className="text-xs font-bold text-emerald-800 uppercase tracking-wider">Farmers Supported</p>
+              <span className="text-2xl md:text-4xl font-serif font-bold text-cheptebo-green">350+</span>
+              <p className="text-[10px] md:text-xs font-bold text-emerald-800 uppercase tracking-wider">Farmers Supported</p>
             </div>
             <div className="space-y-1">
-              <span className="text-4xl font-serif font-bold text-cheptebo-green">40yr</span>
-              <p className="text-xs font-bold text-emerald-800 uppercase tracking-wider">Legacy of Impact</p>
+              <span className="text-2xl md:text-4xl font-serif font-bold text-cheptebo-green">40yr</span>
+              <p className="text-[10px] md:text-xs font-bold text-emerald-800 uppercase tracking-wider">Legacy of Impact</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-cheptebo-green text-white p-10 rounded-3xl shadow-xl overflow-hidden relative flex flex-col justify-center">
-          <div className="relative z-10 space-y-6">
-            <h2 className="text-3xl font-serif font-bold flex items-center gap-3">
-              <Info className="w-8 h-8 text-cheptebo-gold" />
+        <div className="bg-cheptebo-green text-white p-6 md:p-10 rounded-3xl shadow-xl overflow-hidden relative flex flex-col justify-center">
+          <div className="relative z-10 space-y-4 md:space-y-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold flex items-center gap-2 md:gap-3">
+              <Info className="w-6 h-6 md:w-8 md:h-8 text-cheptebo-gold" />
               Expert Advice
             </h2>
-            <p className="text-emerald-50 text-lg">
+            <p className="text-emerald-50 text-base md:text-lg">
               Not sure what to plant? Our experts recommend the best varieties for your specific climate and soil type.
             </p>
             <button 
               onClick={() => setActiveTab('advice')}
-              className="bg-white text-cheptebo-green px-8 py-4 rounded-2xl font-bold hover:bg-emerald-50 transition-all flex items-center gap-2 w-fit shadow-lg"
+              className="bg-white text-cheptebo-green px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl font-bold hover:bg-emerald-50 transition-all flex items-center gap-2 w-fit shadow-lg text-sm md:text-base"
             >
-              Get Agricultural Advice <ChevronRight className="w-5 h-5" />
+              Get Agricultural Advice <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
           <div className="absolute top-0 right-0 w-80 h-80 bg-cheptebo-dark/50 rounded-full -mr-40 -mt-40 blur-3xl opacity-50" />
@@ -177,16 +177,16 @@ export default function App() {
       </section>
 
       {/* Media & Stories Section */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-serif font-bold text-cheptebo-green">Featured Breeding Animals</h2>
-          <button onClick={() => setActiveTab('livestock')} className="text-cheptebo-green font-bold flex items-center gap-2 hover:underline">
-            View All Livestock <ChevronRight className="w-4 h-4" />
+          <h2 className="text-xl md:text-3xl font-serif font-bold text-cheptebo-green">Featured Breeding Animals</h2>
+          <button onClick={() => setActiveTab('livestock')} className="text-cheptebo-green font-bold flex items-center gap-1 md:gap-2 hover:underline text-xs md:text-base">
+            View All <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 flex flex-col sm:flex-row items-center gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('livestock')}>
-            <div className="w-32 h-32 bg-emerald-100 rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="bg-emerald-50 p-4 md:p-8 rounded-2xl md:rounded-3xl border border-emerald-100 flex items-center gap-4 md:gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('livestock')}>
+            <div className="w-20 h-20 md:w-32 md:h-32 bg-emerald-100 rounded-xl md:rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
               <img 
                 src="https://lh3.googleusercontent.com/d/1iOgcRs30LqphqfBxAiYzBzIB8JEqLaCP" 
                 alt="Galla Goat" 
@@ -195,12 +195,12 @@ export default function App() {
               />
             </div>
             <div>
-              <h3 className="text-xl font-serif font-bold text-cheptebo-green">Galla Goats</h3>
-              <p className="text-emerald-600">Superior breeding stock for dry areas. High meat and milk yield.</p>
+              <h3 className="text-base md:text-xl font-serif font-bold text-cheptebo-green">Galla Goats</h3>
+              <p className="text-emerald-600 text-xs md:text-base">Superior breeding stock for dry areas. High meat and milk yield.</p>
             </div>
           </div>
-          <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 flex flex-col sm:flex-row items-center gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('livestock')}>
-            <div className="w-32 h-32 bg-emerald-100 rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
+          <div className="bg-emerald-50 p-4 md:p-8 rounded-2xl md:rounded-3xl border border-emerald-100 flex items-center gap-4 md:gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('livestock')}>
+            <div className="w-20 h-20 md:w-32 md:h-32 bg-emerald-100 rounded-xl md:rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
               <img 
                 src="https://lh3.googleusercontent.com/d/1dALbHyiuS53DhZu-g1AQVwsg9PQf7ts1" 
                 alt="Dairy Heifer" 
@@ -209,24 +209,24 @@ export default function App() {
               />
             </div>
             <div>
-              <h3 className="text-xl font-serif font-bold text-cheptebo-green">Dairy Heifers</h3>
-              <p className="text-emerald-600">High-yielding dairy breeds, acclimatized for the Kerio Valley.</p>
+              <h3 className="text-base md:text-xl font-serif font-bold text-cheptebo-green">Dairy Heifers</h3>
+              <p className="text-emerald-600 text-xs md:text-base">High-yielding dairy breeds, acclimatized for the Kerio Valley.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Facilities Section */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-serif font-bold text-cheptebo-green">Featured Facilities</h2>
-          <button onClick={() => setActiveTab('hospitality')} className="text-cheptebo-green font-bold flex items-center gap-2 hover:underline">
-            View All Facilities <ChevronRight className="w-4 h-4" />
+          <h2 className="text-xl md:text-3xl font-serif font-bold text-cheptebo-green">Featured Facilities</h2>
+          <button onClick={() => setActiveTab('hospitality')} className="text-cheptebo-green font-bold flex items-center gap-1 md:gap-2 hover:underline text-xs md:text-base">
+            View All <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 flex flex-col items-center text-center gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('hospitality')}>
-            <div className="w-full h-48 bg-emerald-100 rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="bg-emerald-50 p-4 md:p-8 rounded-2xl md:rounded-3xl border border-emerald-100 flex flex-col items-center text-center gap-4 md:gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('hospitality')}>
+            <div className="w-full h-32 md:h-48 bg-emerald-100 rounded-xl md:rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
               <img 
                 src="https://lh3.googleusercontent.com/d/1qt66ZuZcRpR6_XESD5hNcweIlZh6-mKF" 
                 alt="Conference Hall" 
@@ -235,92 +235,92 @@ export default function App() {
               />
             </div>
             <div>
-              <h3 className="text-xl font-serif font-bold text-cheptebo-green">Conference Halls</h3>
-              <p className="text-emerald-600 text-sm">Modern facilities for training, workshops, and community events. Up to 200 pax.</p>
+              <h3 className="text-base md:text-xl font-serif font-bold text-cheptebo-green">Conference Halls</h3>
+              <p className="text-emerald-600 text-[10px] md:text-sm">Modern facilities for training, workshops, and community events. Up to 200 pax.</p>
             </div>
           </div>
 
-          <div className="bg-emerald-50 p-8 rounded-3xl border border-emerald-100 flex flex-col items-center text-center gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('hospitality')}>
-            <div className="w-full h-48 bg-emerald-100 rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
+          <div className="bg-emerald-50 p-4 md:p-8 rounded-2xl md:rounded-3xl border border-emerald-100 flex flex-col items-center text-center gap-4 md:gap-6 group cursor-pointer overflow-hidden" onClick={() => setActiveTab('hospitality')}>
+            <div className="w-full h-32 md:h-48 bg-emerald-100 rounded-xl md:rounded-2xl flex items-center justify-center overflow-hidden shrink-0">
               <div className="w-full h-full bg-emerald-200 flex items-center justify-center">
-                <MapPin className="w-16 h-16 text-cheptebo-green" />
+                <MapPin className="w-12 h-12 md:w-16 md:h-16 text-cheptebo-green" />
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-serif font-bold text-cheptebo-green">Luxury Cottages</h3>
-              <p className="text-emerald-600 text-sm">Premium self-contained units with scenic views of the Kerio Valley.</p>
+              <h3 className="text-base md:text-xl font-serif font-bold text-cheptebo-green">Luxury Cottages</h3>
+              <p className="text-emerald-600 text-[10px] md:text-sm">Premium self-contained units with scenic views of the Kerio Valley.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Media & Stories Section */}
-      <section className="space-y-8">
+      <section className="space-y-4 md:space-y-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-serif font-bold text-cheptebo-green">The Cheptebo Story</h2>
-          <button className="text-cheptebo-green font-bold flex items-center gap-2 hover:underline">
-            View All Media <ChevronRight className="w-4 h-4" />
+          <h2 className="text-xl md:text-3xl font-serif font-bold text-cheptebo-green">The Cheptebo Story</h2>
+          <button className="text-cheptebo-green font-bold flex items-center gap-1 md:gap-2 hover:underline text-xs md:text-base">
+            View All <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {[
             { title: 'Making a Difference', desc: 'The history and vision of Cheptebo RDC.', tag: 'Documentary' },
             { title: 'Tissue Culture Bananas', desc: 'Innovation in banana production.', tag: 'Innovation' },
             { title: 'Demonstration Farm', desc: 'A tour of our training facilities.', tag: 'Training' },
           ].map((story, i) => (
             <div key={i} className="group cursor-pointer">
-              <div className="aspect-video bg-emerald-100 rounded-3xl mb-4 overflow-hidden relative">
+              <div className="aspect-video bg-emerald-100 rounded-2xl md:rounded-3xl mb-3 md:mb-4 overflow-hidden relative">
                 <div className="absolute inset-0 flex items-center justify-center bg-cheptebo-dark/20 group-hover:bg-cheptebo-dark/40 transition-all">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-cheptebo-green border-b-[8px] border-b-transparent ml-1" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-0 h-0 border-t-[6px] md:border-t-[8px] border-t-transparent border-l-[10px] md:border-l-[12px] border-l-cheptebo-green border-b-[6px] md:border-b-[8px] border-b-transparent ml-1" />
                   </div>
                 </div>
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest text-cheptebo-green rounded-full">
+                <div className="absolute top-3 left-3 md:top-4 md:left-4">
+                  <span className="px-2 py-0.5 md:px-3 md:py-1 bg-white/90 backdrop-blur-sm text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-cheptebo-green rounded-full">
                     {story.tag}
                   </span>
                 </div>
               </div>
-              <h3 className="font-serif font-bold text-cheptebo-green group-hover:text-cheptebo-dark transition-colors">{story.title}</h3>
-              <p className="text-sm text-emerald-700">{story.desc}</p>
+              <h3 className="text-sm md:text-base font-serif font-bold text-cheptebo-green group-hover:text-cheptebo-dark transition-colors">{story.title}</h3>
+              <p className="text-[10px] md:text-sm text-emerald-700">{story.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Visit Us Section */}
-      <section className="bg-emerald-50 p-10 rounded-3xl border border-emerald-100">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-serif font-bold text-cheptebo-green">Visit Us</h2>
-            <p className="text-emerald-600 text-lg">
+      <section className="bg-emerald-50 p-6 md:p-10 rounded-2xl md:rounded-3xl border border-emerald-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-4 md:space-y-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-cheptebo-green">Visit Us</h2>
+            <p className="text-emerald-600 text-sm md:text-lg">
               We are located in the scenic Kerio Valley, providing a peaceful environment for learning, growth, and relaxation.
             </p>
-            <div className="space-y-4">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
-                  <MapPin className="w-6 h-6 text-cheptebo-green" />
+            <div className="space-y-3 md:space-y-4">
+              <div className="flex gap-3 md:gap-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-xl md:rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                  <MapPin className="w-5 h-5 md:w-6 md:h-6 text-cheptebo-green" />
                 </div>
                 <div>
-                  <p className="font-bold text-cheptebo-green uppercase tracking-widest text-xs mb-1">Our Address</p>
-                  <p className="text-cheptebo-green font-bold">A.I.C Cheptebo Rural Development Centre</p>
-                  <p className="text-emerald-600">P.O. Box 614-30700</p>
-                  <p className="text-emerald-600">ITEN, Kenya</p>
+                  <p className="font-bold text-cheptebo-green uppercase tracking-widest text-[10px] mb-0.5">Our Address</p>
+                  <p className="text-cheptebo-green font-bold text-sm md:text-base">A.I.C Cheptebo Rural Development Centre</p>
+                  <p className="text-emerald-600 text-xs md:text-base">P.O. Box 614-30700</p>
+                  <p className="text-emerald-600 text-xs md:text-base">ITEN, Kenya</p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
-                  <Phone className="w-6 h-6 text-cheptebo-green" />
+              <div className="flex gap-3 md:gap-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-xl md:rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                  <Phone className="w-5 h-5 md:w-6 md:h-6 text-cheptebo-green" />
                 </div>
                 <div>
-                  <p className="font-bold text-cheptebo-green uppercase tracking-widest text-xs mb-1">Call Us</p>
-                  <p className="text-cheptebo-green font-bold">+254 722 296370</p>
-                  <p className="text-emerald-600 text-sm">Available Mon - Sat, 8am - 5pm</p>
+                  <p className="font-bold text-cheptebo-green uppercase tracking-widest text-[10px] mb-0.5">Call Us</p>
+                  <p className="text-cheptebo-green font-bold text-sm md:text-base">+254 722 296370</p>
+                  <p className="text-emerald-600 text-[10px] md:text-sm">Available Mon - Sat, 8am - 5pm</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="aspect-video bg-emerald-200 rounded-[2rem] overflow-hidden shadow-inner relative group">
+          <div className="aspect-video bg-emerald-200 rounded-2xl md:rounded-[2rem] overflow-hidden shadow-inner relative group">
             <img 
               src="https://lh3.googleusercontent.com/d/1qt66ZuZcRpR6_XESD5hNcweIlZh6-mKF" 
               alt="Cheptebo Location" 
@@ -350,15 +350,15 @@ export default function App() {
             <p>Looking for chicks, milk, or breeding animals? Visit our <button onClick={() => setActiveTab('livestock')} className="font-bold underline">Livestock & Poultry</button> section.</p>
           </div>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {filtered.map(product => (
             <motion.div 
               layout
               key={product.id}
-              className="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden"
+              className="bg-white p-3 md:p-6 rounded-xl md:rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden"
             >
               {product.image && (
-                <div className="aspect-video bg-emerald-50 rounded-xl mb-4 overflow-hidden">
+                <div className="aspect-square md:aspect-video bg-emerald-50 rounded-lg md:rounded-xl mb-3 md:mb-4 overflow-hidden">
                   <img 
                     src={product.image} 
                     alt={product.name} 
@@ -367,16 +367,16 @@ export default function App() {
                   />
                 </div>
               )}
-              <div className="flex-1 space-y-2">
-                <h3 className="text-lg font-serif font-bold text-cheptebo-green">{product.name}</h3>
-                <p className="text-emerald-700 text-sm">{product.description}</p>
-                <p className="text-xl font-bold text-cheptebo-green">Ksh {product.price.toLocaleString()}</p>
+              <div className="flex-1 space-y-1 md:space-y-2">
+                <h3 className="text-sm md:text-lg font-serif font-bold text-cheptebo-green line-clamp-1 md:line-clamp-none">{product.name}</h3>
+                <p className="text-emerald-700 text-[10px] md:text-sm line-clamp-2 md:line-clamp-none">{product.description}</p>
+                <p className="text-sm md:text-xl font-bold text-cheptebo-green">Ksh {product.price.toLocaleString()}</p>
               </div>
               <button 
                 onClick={() => addToCart(product)}
-                className="mt-4 w-full bg-cheptebo-green text-white py-3 rounded-xl font-bold hover:bg-cheptebo-dark transition-colors flex items-center justify-center gap-2"
+                className="mt-3 md:mt-4 w-full bg-cheptebo-green text-white py-2 md:py-3 rounded-lg md:rounded-xl font-bold hover:bg-cheptebo-dark transition-colors flex items-center justify-center gap-1 md:gap-2 text-xs md:text-base"
               >
-                <Plus className="w-4 h-4" /> Add to Order
+                <Plus className="w-3 h-3 md:w-4 md:h-4" /> Add to Order
               </button>
             </motion.div>
           ))}
@@ -482,29 +482,29 @@ export default function App() {
     const regular = filtered.filter(p => p.unit !== 'inquiry');
 
     return (
-      <div className="space-y-8">
+      <div className="space-y-4 md:space-y-8">
         <div className="flex items-center justify-between">
-          <button onClick={() => setActiveTab('home')} className="flex items-center gap-2 text-emerald-700 hover:text-emerald-900 font-medium">
-            <ArrowLeft className="w-4 h-4" /> Back to Home
+          <button onClick={() => setActiveTab('home')} className="flex items-center gap-1 md:gap-2 text-emerald-700 hover:text-emerald-900 font-medium text-xs md:text-base">
+            <ArrowLeft className="w-3 h-3 md:w-4 md:h-4" /> Back
           </button>
-          <h2 className="text-2xl font-bold text-emerald-900">Livestock & Poultry Department</h2>
+          <h2 className="text-lg md:text-2xl font-bold text-emerald-900">Livestock & Poultry</h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-8">
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-emerald-800 flex items-center gap-2">
-                <Bird className="w-6 h-6" /> Poultry (Improved Kienyeji)
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="lg:col-span-2 space-y-6 md:space-y-8">
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-base md:text-xl font-bold text-emerald-800 flex items-center gap-2">
+                <Bird className="w-5 h-5 md:w-6 md:h-6" /> Poultry (Improved Kienyeji)
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
                 {regular.filter(p => p.id.startsWith('ch-')).map(product => (
                   <motion.div 
                     layout
                     key={product.id}
-                    className="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden"
+                    className="bg-white p-3 md:p-6 rounded-xl md:rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow flex flex-col overflow-hidden"
                   >
                     {product.image && (
-                      <div className="aspect-video bg-emerald-50 rounded-xl mb-4 overflow-hidden">
+                      <div className="aspect-square md:aspect-video bg-emerald-50 rounded-lg md:rounded-xl mb-2 md:mb-4 overflow-hidden">
                         <img 
                           src={product.image} 
                           alt={product.name} 
@@ -513,43 +513,43 @@ export default function App() {
                         />
                       </div>
                     )}
-                    <div className="flex-1 space-y-2">
-                      <h3 className="text-lg font-bold text-emerald-900">{product.name}</h3>
-                      <p className="text-emerald-600 text-sm">{product.description}</p>
-                      <p className="text-xl font-black text-emerald-700">Ksh {product.price.toLocaleString()}</p>
+                    <div className="flex-1 space-y-1 md:space-y-2">
+                      <h3 className="text-xs md:text-lg font-bold text-emerald-900 line-clamp-1 md:line-clamp-none">{product.name}</h3>
+                      <p className="text-emerald-600 text-[10px] md:text-sm line-clamp-2 md:line-clamp-none">{product.description}</p>
+                      <p className="text-sm md:text-xl font-black text-emerald-700">Ksh {product.price.toLocaleString()}</p>
                     </div>
                     <button 
                       onClick={() => addToCart(product)}
-                      className="mt-4 w-full bg-emerald-600 text-white py-3 rounded-xl font-bold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2"
+                      className="mt-2 md:mt-4 w-full bg-emerald-600 text-white py-2 md:py-3 rounded-lg md:rounded-xl font-bold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-1 md:gap-2 text-[10px] md:text-base"
                     >
-                      <Plus className="w-4 h-4" /> Add to Order
+                      <Plus className="w-3 h-3 md:w-4 md:h-4" /> Add to Order
                     </button>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-emerald-800 flex items-center gap-2">
-                <Info className="w-6 h-6" /> Dairy Products
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-base md:text-xl font-bold text-emerald-800 flex items-center gap-2">
+                <Info className="w-5 h-5 md:w-6 md:h-6" /> Dairy Products
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {regular.filter(p => p.id.startsWith('m-')).map(product => (
                   <motion.div 
                     layout
                     key={product.id}
-                    className="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                    className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow flex flex-col"
                   >
-                    <div className="flex-1 space-y-2">
-                      <h3 className="text-lg font-bold text-emerald-900">{product.name}</h3>
-                      <p className="text-emerald-600 text-sm">{product.description}</p>
-                      <p className="text-xl font-black text-emerald-700">Ksh {product.price.toLocaleString()}</p>
+                    <div className="flex-1 space-y-1 md:space-y-2">
+                      <h3 className="text-sm md:text-lg font-bold text-emerald-900">{product.name}</h3>
+                      <p className="text-emerald-600 text-[10px] md:text-sm">{product.description}</p>
+                      <p className="text-sm md:text-xl font-black text-emerald-700">Ksh {product.price.toLocaleString()}</p>
                     </div>
                     <button 
                       onClick={() => addToCart(product)}
-                      className="mt-4 w-full bg-emerald-600 text-white py-3 rounded-xl font-bold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2"
+                      className="mt-3 md:mt-4 w-full bg-emerald-600 text-white py-2 md:py-3 rounded-lg md:rounded-xl font-bold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-1 md:gap-2 text-xs md:text-base"
                     >
-                      <Plus className="w-4 h-4" /> Add to Order
+                      <Plus className="w-3 h-3 md:w-4 md:h-4" /> Add to Order
                     </button>
                   </motion.div>
                 ))}
@@ -557,13 +557,13 @@ export default function App() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold text-emerald-800">Breeding Animals</h3>
-            <div className="space-y-4">
+          <div className="space-y-4 md:space-y-6">
+            <h3 className="text-base md:text-xl font-bold text-emerald-800">Breeding Animals</h3>
+            <div className="space-y-3 md:space-y-4">
               {breeding.map(product => (
-                <div key={product.id} className="bg-amber-50 p-6 rounded-2xl border border-amber-100 space-y-4 overflow-hidden">
+                <div key={product.id} className="bg-amber-50 p-4 md:p-6 rounded-xl md:rounded-2xl border border-amber-100 space-y-3 md:space-y-4 overflow-hidden">
                   {product.image && (
-                    <div className="aspect-video bg-amber-100 rounded-xl overflow-hidden">
+                    <div className="aspect-video bg-amber-100 rounded-lg md:rounded-xl overflow-hidden">
                       <img 
                         src={product.image} 
                         alt={product.name} 
@@ -572,33 +572,33 @@ export default function App() {
                       />
                     </div>
                   )}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0">
-                      <Bird className="w-6 h-6" />
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center shrink-0">
+                      <Bird className="w-5 h-5 md:w-6 md:h-6" />
                     </div>
-                    <h4 className="font-bold text-amber-900">{product.name}</h4>
+                    <h4 className="font-bold text-amber-900 text-sm md:text-base">{product.name}</h4>
                   </div>
-                  <p className="text-sm text-amber-800">{product.description}</p>
-                  <div className="pt-2">
+                  <p className="text-[10px] md:text-sm text-amber-800">{product.description}</p>
+                  <div className="pt-1 md:pt-2">
                     <button 
                       onClick={() => {
                         const message = `Halo Cheptebo! I am inquiring about the current price for: ${product.name}.`;
                         window.open(`https://wa.me/254722296370?text=${encodeURIComponent(message)}`, '_blank');
                       }}
-                      className="w-full bg-amber-600 text-white py-3 rounded-xl font-bold hover:bg-amber-700 transition-colors flex items-center justify-center gap-2"
+                      className="w-full bg-amber-600 text-white py-2 md:py-3 rounded-lg md:rounded-xl font-bold hover:bg-amber-700 transition-colors flex items-center justify-center gap-1 md:gap-2 text-xs md:text-base"
                     >
-                      <ExternalLink className="w-4 h-4" /> Inquire Price via WhatsApp
+                      <ExternalLink className="w-3 h-3 md:w-4 md:h-4" /> WhatsApp Inquiry
                     </button>
                   </div>
                 </div>
               ))}
             </div>
             
-            <div className="bg-emerald-900 text-white p-6 rounded-2xl space-y-4">
-              <h4 className="font-bold flex items-center gap-2">
-                <Info className="w-5 h-5" /> Breeding Excellence
+            <div className="bg-emerald-900 text-white p-4 md:p-6 rounded-xl md:rounded-2xl space-y-2 md:space-y-4">
+              <h4 className="font-bold flex items-center gap-2 text-sm md:text-base">
+                <Info className="w-4 h-4 md:w-5 md:h-5" /> Breeding Excellence
               </h4>
-              <p className="text-xs text-emerald-100 leading-relaxed">
+              <p className="text-[10px] md:text-xs text-emerald-100 leading-relaxed">
                 Our Galla Goats and Dairy Heifers are bred for high performance in the Kerio Valley climate. 
                 We provide full vaccination records and breeding history for all animals.
               </p>
@@ -618,51 +618,51 @@ export default function App() {
     };
 
     return (
-      <div className="space-y-12">
+      <div className="space-y-8 md:space-y-12">
         <div className="flex items-center justify-between">
-          <button onClick={() => setActiveTab('home')} className="flex items-center gap-2 text-cheptebo-green hover:text-cheptebo-dark font-medium">
+          <button onClick={() => setActiveTab('home')} className="flex items-center gap-2 text-cheptebo-green hover:text-cheptebo-dark font-medium text-sm md:text-base">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </button>
-          <h2 className="text-2xl font-serif font-bold text-cheptebo-green">Hospitality & Conferences</h2>
+          <h2 className="text-lg md:text-2xl font-serif font-bold text-cheptebo-green">Hospitality & Conferences</h2>
         </div>
 
         {/* Hero Section: Everything Under One Roof */}
-        <div className="text-center space-y-4 mb-12">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 text-cheptebo-green px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest border border-emerald-100">
-            <Star className="w-3 h-3 fill-cheptebo-green" /> OUR FACILITIES
+        <div className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
+          <div className="inline-flex items-center gap-2 bg-emerald-50 text-cheptebo-green px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[8px] md:text-[10px] font-bold uppercase tracking-widest border border-emerald-100">
+            <Star className="w-2.5 h-2.5 md:w-3 md:h-3 fill-cheptebo-green" /> OUR FACILITIES
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-cheptebo-green">Everything Under One Roof</h2>
-          <p className="text-emerald-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <h2 className="text-2xl md:text-5xl font-serif font-bold text-cheptebo-green">Everything Under One Roof</h2>
+          <p className="text-emerald-600 max-w-2xl mx-auto text-xs md:text-base leading-relaxed px-4">
             From world-class conference halls to comfortable accommodation and superb catering — 
             AIC Cheptebo delivers a seamless event experience.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {/* Conference Hall Card */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-emerald-100 shadow-sm flex flex-col group">
-            <div className="relative h-64 overflow-hidden">
+          <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-emerald-100 shadow-sm flex flex-col group">
+            <div className="relative h-48 md:h-64 overflow-hidden">
               <img 
                 src="https://lh3.googleusercontent.com/d/1qt66ZuZcRpR6_XESD5hNcweIlZh6-mKF" 
                 alt="Conference Hall" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-cheptebo-dark/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-widest">
+              <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-cheptebo-dark/80 backdrop-blur-md text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-lg uppercase tracking-widest">
                 CONFERENCE HALLS
               </div>
             </div>
-            <div className="p-8 flex-1 flex flex-col space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-emerald-50 rounded-xl">
-                  <Monitor className="w-6 h-6 text-cheptebo-green" />
+            <div className="p-4 md:p-8 flex-1 flex flex-col space-y-4 md:space-y-6">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="p-2 md:p-3 bg-emerald-50 rounded-xl">
+                  <Monitor className="w-5 h-5 md:w-6 md:h-6 text-cheptebo-green" />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-cheptebo-green">Conference Hall</h3>
+                <h3 className="text-lg md:text-xl font-serif font-bold text-cheptebo-green">Conference Hall</h3>
               </div>
-              <p className="text-sm text-emerald-700 leading-relaxed">
+              <p className="text-xs md:text-sm text-emerald-700 leading-relaxed">
                 Four purpose-built conference halls in a tranquil hilltop environment. Each hall is fully set up to support professional training, workshops and high-level meetings.
               </p>
-              <ul className="space-y-3 pt-4 border-t border-emerald-50">
+              <ul className="space-y-2 md:space-y-3 pt-3 md:pt-4 border-t border-emerald-50">
                 {[
                   'Digital projector & projection screen',
                   'PA system & microphones',
@@ -670,8 +670,8 @@ export default function App() {
                   'Stationery for all delegates',
                   'Large hall (3,000 KSh/day) · Small hall (2,000 KSh/day)'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-xs text-emerald-800 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cheptebo-green shrink-0" />
+                  <li key={i} className="flex items-center gap-2 md:gap-3 text-[10px] md:text-xs text-emerald-800 font-medium">
+                    <CheckCircle2 className="w-3 h-3 md:w-3.5 md:h-3.5 text-cheptebo-green shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -680,29 +680,29 @@ export default function App() {
           </div>
 
           {/* Accommodation Card */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-emerald-100 shadow-sm flex flex-col group">
-            <div className="relative h-64 overflow-hidden">
+          <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-emerald-100 shadow-sm flex flex-col group">
+            <div className="relative h-48 md:h-64 overflow-hidden">
               <img 
                 src="https://lh3.googleusercontent.com/d/1gGW4WiXTzBDnUhcwnhZJcBvScemIxsMj" 
                 alt="Guest Accommodation" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-cheptebo-dark/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-widest">
+              <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-cheptebo-dark/80 backdrop-blur-md text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-lg uppercase tracking-widest">
                 ACCOMMODATION
               </div>
             </div>
-            <div className="p-8 flex-1 flex flex-col space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-emerald-50 rounded-xl">
-                  <Bed className="w-6 h-6 text-cheptebo-green" />
+            <div className="p-4 md:p-8 flex-1 flex flex-col space-y-4 md:space-y-6">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="p-2 md:p-3 bg-emerald-50 rounded-xl">
+                  <Bed className="w-5 h-5 md:w-6 md:h-6 text-cheptebo-green" />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-cheptebo-green">Guest Accommodation</h3>
+                <h3 className="text-lg md:text-xl font-serif font-bold text-cheptebo-green">Guest Accommodation</h3>
               </div>
-              <p className="text-sm text-emerald-700 leading-relaxed">
+              <p className="text-xs md:text-sm text-emerald-700 leading-relaxed">
                 Comfortable en-suite and standard rooms for up to 100 guests, situated in peaceful surroundings to ensure your delegates rest and recharge fully.
               </p>
-              <ul className="space-y-3 pt-4 border-t border-emerald-50">
+              <ul className="space-y-2 md:space-y-3 pt-3 md:pt-4 border-t border-emerald-50">
                 {[
                   'Self-contained rooms (single, double, family)',
                   'Non-self-contained rooms (single & double)',
@@ -710,8 +710,8 @@ export default function App() {
                   'Hot water showers',
                   'From 600 KSh (bed only) per person'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-xs text-emerald-800 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cheptebo-green shrink-0" />
+                  <li key={i} className="flex items-center gap-2 md:gap-3 text-[10px] md:text-xs text-emerald-800 font-medium">
+                    <CheckCircle2 className="w-3 h-3 md:w-3.5 md:h-3.5 text-cheptebo-green shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -720,29 +720,29 @@ export default function App() {
           </div>
 
           {/* Dining Card */}
-          <div className="bg-white rounded-[2.5rem] overflow-hidden border border-emerald-100 shadow-sm flex flex-col group">
-            <div className="relative h-64 overflow-hidden">
+          <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-emerald-100 shadow-sm flex flex-col group">
+            <div className="relative h-48 md:h-64 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1550966842-2849a220276c?auto=format&fit=crop&q=80&w=800" 
                 alt="Dining & Kitchen" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 left-4 bg-cheptebo-dark/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-lg uppercase tracking-widest">
+              <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-cheptebo-dark/80 backdrop-blur-md text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-lg uppercase tracking-widest">
                 DINING
               </div>
             </div>
-            <div className="p-8 flex-1 flex flex-col space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-emerald-50 rounded-xl">
-                  <Utensils className="w-6 h-6 text-cheptebo-green" />
+            <div className="p-4 md:p-8 flex-1 flex flex-col space-y-4 md:space-y-6">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="p-2 md:p-3 bg-emerald-50 rounded-xl">
+                  <Utensils className="w-5 h-5 md:w-6 md:h-6 text-cheptebo-green" />
                 </div>
-                <h3 className="text-xl font-serif font-bold text-cheptebo-green">Dining & Kitchen</h3>
+                <h3 className="text-lg md:text-xl font-serif font-bold text-cheptebo-green">Dining & Kitchen</h3>
               </div>
-              <p className="text-sm text-emerald-700 leading-relaxed">
+              <p className="text-xs md:text-sm text-emerald-700 leading-relaxed">
                 Our professional kitchen team delivers nutritious, well-prepared meals throughout the day — keeping your delegates energised and satisfied from morning to evening.
               </p>
-              <ul className="space-y-3 pt-4 border-t border-emerald-50">
+              <ul className="space-y-2 md:space-y-3 pt-3 md:pt-4 border-t border-emerald-50">
                 {[
                   'Full cooked breakfast each morning',
                   'Hot lunch & dinner service',
@@ -750,8 +750,8 @@ export default function App() {
                   'Mineral water throughout sessions',
                   'Special dietary needs accommodated'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-xs text-emerald-800 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <li key={i} className="flex items-center gap-2 md:gap-3 text-[10px] md:text-xs text-emerald-800 font-medium">
+                    <CheckCircle2 className="w-3 h-3 md:w-3.5 md:h-3.5 text-emerald-500 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -1199,56 +1199,56 @@ export default function App() {
             </div>
           </div>
 
-          <div ref={bookingRef} className="bg-white p-10 rounded-[2.5rem] border border-emerald-100 shadow-sm space-y-8 max-w-4xl mx-auto">
-            <h3 className="text-xl font-serif font-bold text-cheptebo-green">Book Training or Event</h3>
-            <div className="space-y-4">
+          <div ref={bookingRef} className="bg-white p-5 md:p-10 rounded-2xl md:rounded-[2.5rem] border border-emerald-100 shadow-sm space-y-6 md:space-y-8 max-w-4xl mx-auto">
+            <h3 className="text-lg md:text-xl font-serif font-bold text-cheptebo-green">Book Training or Event</h3>
+            <div className="space-y-3 md:space-y-4">
               <div className="space-y-1">
-                <label className="text-xs font-bold text-emerald-700 uppercase">Room or Event Type</label>
+                <label className="text-[10px] md:text-xs font-bold text-emerald-700 uppercase">Room or Event Type</label>
                 <input 
                   type="text" 
                   value={booking.type}
                   placeholder="e.g. Luxury Cottage"
-                  className="w-full p-4 bg-emerald-50 border-2 border-emerald-100 rounded-2xl focus:border-cheptebo-green outline-none transition-all"
+                  className="w-full p-3 md:p-4 bg-emerald-50 border-2 border-emerald-100 rounded-xl md:rounded-2xl focus:border-cheptebo-green outline-none transition-all text-sm md:text-base"
                   onChange={(e) => setBooking(prev => ({ ...prev, type: e.target.value }))}
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-xs font-bold text-emerald-700 uppercase">Event Date</label>
+                <label className="text-[10px] md:text-xs font-bold text-emerald-700 uppercase">Event Date</label>
                 <input 
                   type="date" 
-                  className="w-full p-4 bg-emerald-50 border-2 border-emerald-100 rounded-2xl focus:border-cheptebo-green outline-none transition-all"
+                  className="w-full p-3 md:p-4 bg-emerald-50 border-2 border-emerald-100 rounded-xl md:rounded-2xl focus:border-cheptebo-green outline-none transition-all text-sm md:text-base"
                   onChange={(e) => setBooking(prev => ({ ...prev, date: e.target.value }))}
                 />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-emerald-700 uppercase">Number of Guests</label>
+                  <label className="text-[10px] md:text-xs font-bold text-emerald-700 uppercase">Number of Guests</label>
                   <input 
                     type="number" 
                     min="1"
                     value={booking.guests}
                     placeholder="e.g. 20"
-                    className="w-full p-4 bg-emerald-50 border-2 border-emerald-100 rounded-2xl focus:border-cheptebo-green outline-none transition-all"
+                    className="w-full p-3 md:p-4 bg-emerald-50 border-2 border-emerald-100 rounded-xl md:rounded-2xl focus:border-cheptebo-green outline-none transition-all text-sm md:text-base"
                     onChange={(e) => setBooking(prev => ({ ...prev, guests: parseInt(e.target.value) || 1 }))}
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-emerald-700 uppercase">Number of Days/Nights</label>
+                  <label className="text-[10px] md:text-xs font-bold text-emerald-700 uppercase">Number of Days/Nights</label>
                   <input 
                     type="number" 
                     min="1"
                     value={booking.days}
                     placeholder="e.g. 3"
-                    className="w-full p-4 bg-emerald-50 border-2 border-emerald-100 rounded-2xl focus:border-cheptebo-green outline-none transition-all"
+                    className="w-full p-3 md:p-4 bg-emerald-50 border-2 border-emerald-100 rounded-xl md:rounded-2xl focus:border-cheptebo-green outline-none transition-all text-sm md:text-base"
                     onChange={(e) => setBooking(prev => ({ ...prev, days: parseInt(e.target.value) || 1 }))}
                   />
                 </div>
               </div>
               <div className="space-y-1">
-                <label className="text-xs font-bold text-emerald-700 uppercase">Accommodation & Catering Needs</label>
+                <label className="text-[10px] md:text-xs font-bold text-emerald-700 uppercase">Accommodation & Catering Needs</label>
                 <textarea 
                   placeholder="Tell us more about your requirements..."
-                  className="w-full p-4 bg-emerald-50 border-2 border-emerald-100 rounded-2xl focus:border-cheptebo-green outline-none transition-all h-32"
+                  className="w-full p-3 md:p-4 bg-emerald-50 border-2 border-emerald-100 rounded-xl md:rounded-2xl focus:border-cheptebo-green outline-none transition-all h-24 md:h-32 text-sm md:text-base"
                   onChange={(e) => setBooking(prev => ({ ...prev, needs: e.target.value }))}
                 />
               </div>
@@ -1258,7 +1258,7 @@ export default function App() {
                   window.open(`https://wa.me/254722296370?text=${encodeURIComponent(message)}`, '_blank');
                   setActiveTab('home');
                 }}
-                className="w-full bg-cheptebo-dark text-white py-4 rounded-2xl font-black text-lg hover:bg-cheptebo-green transition-colors"
+                className="w-full bg-cheptebo-dark text-white py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-cheptebo-green transition-colors"
               >
                 Submit Inquiry via WhatsApp
               </button>
@@ -1270,32 +1270,32 @@ export default function App() {
   };
 
   const renderAdvice = () => (
-    <div className="max-w-3xl mx-auto space-y-8">
+    <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
       <div className="flex items-center gap-2">
-        <button onClick={() => setActiveTab('home')} className="p-2 hover:bg-emerald-50 rounded-full">
-          <ArrowLeft className="w-6 h-6 text-cheptebo-green" />
+        <button onClick={() => setActiveTab('home')} className="p-1.5 md:p-2 hover:bg-emerald-50 rounded-full">
+          <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 text-cheptebo-green" />
         </button>
-        <h2 className="text-3xl font-serif font-bold text-cheptebo-green">Expert Agricultural Advice</h2>
+        <h2 className="text-xl md:text-3xl font-serif font-bold text-cheptebo-green">Expert Agricultural Advice</h2>
       </div>
 
-      <div className="bg-white p-8 rounded-3xl border border-emerald-100 shadow-sm space-y-6">
-        <div className="space-y-4">
-          <h3 className="text-xl font-serif font-bold text-cheptebo-green">Where is your farm located?</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <button className="p-6 border-2 border-emerald-100 rounded-2xl hover:border-cheptebo-green hover:bg-emerald-50 text-left transition-all group">
-              <span className="block font-bold text-emerald-900 group-hover:text-cheptebo-green">Dry Areas (e.g., Kerio Valley)</span>
-              <span className="text-sm text-emerald-600">High heat, low rainfall.</span>
+      <div className="bg-white p-4 md:p-8 rounded-2xl md:rounded-3xl border border-emerald-100 shadow-sm space-y-4 md:space-y-6">
+        <div className="space-y-3 md:space-y-4">
+          <h3 className="text-lg md:text-xl font-serif font-bold text-cheptebo-green">Where is your farm located?</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+            <button className="p-4 md:p-6 border-2 border-emerald-100 rounded-xl md:rounded-2xl hover:border-cheptebo-green hover:bg-emerald-50 text-left transition-all group">
+              <span className="block font-bold text-sm md:text-base text-emerald-900 group-hover:text-cheptebo-green">Dry Areas (e.g., Kerio Valley)</span>
+              <span className="text-xs md:text-sm text-emerald-600">High heat, low rainfall.</span>
             </button>
-            <button className="p-6 border-2 border-emerald-100 rounded-2xl hover:border-cheptebo-green hover:bg-emerald-50 text-left transition-all group">
-              <span className="block font-bold text-emerald-900 group-hover:text-cheptebo-green">Highland Areas</span>
-              <span className="text-sm text-emerald-600">Cooler temperatures, higher rainfall.</span>
+            <button className="p-4 md:p-6 border-2 border-emerald-100 rounded-xl md:rounded-2xl hover:border-cheptebo-green hover:bg-emerald-50 text-left transition-all group">
+              <span className="block font-bold text-sm md:text-base text-emerald-900 group-hover:text-cheptebo-green">Highland Areas</span>
+              <span className="text-xs md:text-sm text-emerald-600">Cooler temperatures, higher rainfall.</span>
             </button>
           </div>
         </div>
 
-        <div className="p-6 bg-emerald-50 rounded-2xl space-y-4">
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="w-full md:w-48 h-32 bg-emerald-100 rounded-xl overflow-hidden shrink-0">
+        <div className="p-4 md:p-6 bg-emerald-50 rounded-xl md:rounded-2xl space-y-4">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+            <div className="w-full md:w-48 h-40 md:h-32 bg-emerald-100 rounded-xl overflow-hidden shrink-0">
               <img 
                 src="https://lh3.googleusercontent.com/d/19Ygb48RJspV1VikwweLzhKVpPFZoOOry" 
                 alt="Pixie Orange Seedling" 
@@ -1303,21 +1303,21 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="space-y-4">
-              <h4 className="font-bold text-cheptebo-green flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-cheptebo-green" />
+            <div className="space-y-2 md:space-y-4">
+              <h4 className="font-bold text-sm md:text-base text-cheptebo-green flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-cheptebo-green" />
                 Our Recommendation
               </h4>
-              <p className="text-emerald-700">
+              <p className="text-xs md:text-sm text-emerald-700 leading-relaxed">
                 For dry areas like the Kerio Valley, we strongly recommend **Pixie Oranges** and **Apple Mangoes**. 
                 These varieties are drought-tolerant and have high market demand.
               </p>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
             <button 
               onClick={() => setActiveTab('nursery')}
-              className="bg-cheptebo-green text-white px-6 py-3 rounded-xl font-bold hover:bg-cheptebo-dark transition-colors"
+              className="bg-cheptebo-green text-white px-6 py-2.5 md:py-3 rounded-xl font-bold hover:bg-cheptebo-dark transition-colors text-sm md:text-base"
             >
               View Nursery Catalog
             </button>
@@ -1326,9 +1326,9 @@ export default function App() {
                 const message = "Halo Cheptebo! I would like some agricultural advice for my farm.";
                 window.open(`https://wa.me/254722296370?text=${encodeURIComponent(message)}`, '_blank');
               }}
-              className="flex items-center justify-center gap-2 text-cheptebo-green font-bold hover:underline"
+              className="flex items-center justify-center gap-2 text-cheptebo-green font-bold hover:underline text-sm md:text-base py-2"
             >
-              <MessageSquare className="w-5 h-5" /> Talk to an Expert
+              <MessageSquare className="w-4 h-4 md:w-5 md:h-5" /> Talk to an Expert
             </button>
           </div>
         </div>
@@ -1337,103 +1337,103 @@ export default function App() {
   );
 
   const renderCart = () => (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-serif font-bold text-cheptebo-green">Your Order Summary</h2>
-        <button onClick={() => setActiveTab('home')} className="text-cheptebo-green font-medium hover:underline">Continue Shopping</button>
+        <h2 className="text-xl md:text-3xl font-serif font-bold text-cheptebo-green">Your Order Summary</h2>
+        <button onClick={() => setActiveTab('home')} className="text-cheptebo-green font-bold text-sm md:text-base hover:underline">Continue Shopping</button>
       </div>
 
       {cart.length === 0 ? (
-          <div className="text-center py-20 space-y-4">
-            <ShoppingCart className="w-16 h-16 mx-auto text-emerald-200" />
-            <p className="text-emerald-600 text-lg">Your order is empty.</p>
+          <div className="text-center py-12 md:py-20 space-y-4">
+            <ShoppingCart className="w-12 h-12 md:w-16 md:h-16 mx-auto text-emerald-200" />
+            <p className="text-emerald-600 text-base md:text-lg">Your order is empty.</p>
             <button 
               onClick={() => setActiveTab('home')}
-              className="bg-cheptebo-green text-white px-8 py-3 rounded-full font-bold hover:bg-cheptebo-dark transition-colors"
+              className="bg-cheptebo-green text-white px-6 py-2.5 md:px-8 md:py-3 rounded-full font-bold hover:bg-cheptebo-dark transition-colors text-sm md:text-base"
             >
               Browse Products
             </button>
           </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="lg:col-span-2 space-y-3 md:space-y-4">
             {cart.map(item => (
-              <div key={item.product.id} className="bg-white p-4 rounded-2xl border border-emerald-100 flex items-center gap-4">
+              <div key={item.product.id} className="bg-white p-3 md:p-4 rounded-xl md:rounded-2xl border border-emerald-100 flex items-center gap-3 md:gap-4">
                 <div className="flex-1">
-                  <h4 className="font-serif font-bold text-cheptebo-green">{item.product.name}</h4>
-                  <p className="text-emerald-600 text-sm">Ksh {item.product.price} / {item.product.unit}</p>
+                  <h4 className="font-serif font-bold text-cheptebo-green text-sm md:text-base">{item.product.name}</h4>
+                  <p className="text-emerald-600 text-[10px] md:text-sm">Ksh {item.product.price} / {item.product.unit}</p>
                 </div>
-                <div className="flex items-center gap-3 bg-emerald-50 rounded-lg p-1">
-                  <button onClick={() => updateQuantity(item.product.id, -1)} className="p-1 hover:bg-white rounded"><Minus className="w-4 h-4" /></button>
-                  <span className="font-bold w-6 text-center">{item.quantity}</span>
-                  <button onClick={() => updateQuantity(item.product.id, 1)} className="p-1 hover:bg-white rounded"><Plus className="w-4 h-4" /></button>
+                <div className="flex items-center gap-2 md:gap-3 bg-emerald-50 rounded-lg p-1">
+                  <button onClick={() => updateQuantity(item.product.id, -1)} className="p-1 hover:bg-white rounded"><Minus className="w-3 h-3 md:w-4 md:h-4" /></button>
+                  <span className="font-bold w-5 md:w-6 text-center text-sm md:text-base">{item.quantity}</span>
+                  <button onClick={() => updateQuantity(item.product.id, 1)} className="p-1 hover:bg-white rounded"><Plus className="w-3 h-3 md:w-4 md:h-4" /></button>
                 </div>
-                <button onClick={() => removeFromCart(item.product.id)} className="text-red-400 hover:text-red-600 p-2">
-                  <Trash2 className="w-5 h-5" />
+                <button onClick={() => removeFromCart(item.product.id)} className="text-red-400 hover:text-red-600 p-1.5 md:p-2">
+                  <Trash2 className="w-4 h-4 md:w-5 md:h-5" />
                 </button>
               </div>
             ))}
 
-            <div className="bg-white p-6 rounded-2xl border border-emerald-100 space-y-4">
-              <h3 className="font-serif font-bold text-cheptebo-green">Delivery Preference</h3>
-              <div className="flex gap-4">
+            <div className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl border border-emerald-100 space-y-3 md:space-y-4">
+              <h3 className="font-serif font-bold text-cheptebo-green text-sm md:text-base">Delivery Preference</h3>
+              <div className="flex gap-3 md:gap-4">
                 <button 
                   onClick={() => setDeliveryPreference('pickup')}
                   className={cn(
-                    "flex-1 p-4 rounded-xl border-2 text-center font-bold transition-all",
+                    "flex-1 p-3 md:p-4 rounded-xl border-2 text-center font-bold transition-all text-xs md:text-base",
                     deliveryPreference === 'pickup' ? "border-cheptebo-green bg-emerald-50 text-cheptebo-green" : "border-emerald-100 text-emerald-400"
                   )}
                 >
-                  <MapPin className="w-5 h-5 mx-auto mb-1" />
+                  <MapPin className="w-4 h-4 md:w-5 md:h-5 mx-auto mb-1" />
                   Self-Pickup
                 </button>
                 <button 
                   onClick={() => setDeliveryPreference('delivery')}
                   className={cn(
-                    "flex-1 p-4 rounded-xl border-2 text-center font-bold transition-all",
+                    "flex-1 p-3 md:p-4 rounded-xl border-2 text-center font-bold transition-all text-xs md:text-base",
                     deliveryPreference === 'delivery' ? "border-cheptebo-green bg-emerald-50 text-cheptebo-green" : "border-emerald-100 text-emerald-400"
                   )}
                 >
-                  <Phone className="w-5 h-5 mx-auto mb-1" />
+                  <Phone className="w-4 h-4 md:w-5 md:h-5 mx-auto mb-1" />
                   Delivery
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-cheptebo-green text-white p-6 rounded-3xl shadow-lg space-y-4">
-              <h3 className="text-xl font-serif font-bold">Total Amount</h3>
-              <div className="flex justify-between text-emerald-100">
+          <div className="space-y-4 md:space-y-6">
+            <div className="bg-cheptebo-green text-white p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-lg space-y-3 md:space-y-4">
+              <h3 className="text-lg md:text-xl font-serif font-bold">Total Amount</h3>
+              <div className="flex justify-between text-emerald-100 text-sm md:text-base">
                 <span>Subtotal</span>
                 <span>Ksh {cartTotal.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-emerald-100">
+              <div className="flex justify-between text-emerald-100 text-sm md:text-base">
                 <span>Delivery</span>
                 <span>{deliveryPreference === 'pickup' ? 'Free' : 'Calculated at checkout'}</span>
               </div>
               <div className="h-px bg-emerald-800" />
-              <div className="flex justify-between text-2xl font-bold">
+              <div className="flex justify-between text-xl md:text-2xl font-bold">
                 <span>Total</span>
                 <span>Ksh {cartTotal.toLocaleString()}</span>
               </div>
               <button 
                 onClick={() => setShowPayment(true)}
-                className="w-full bg-white text-cheptebo-green py-4 rounded-2xl font-bold text-lg hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-white text-cheptebo-green py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2"
               >
-                <CreditCard className="w-6 h-6" /> Pay via M-Pesa
+                <CreditCard className="w-5 h-5 md:w-6 md:h-6" /> Pay via M-Pesa
               </button>
               <button 
                 onClick={() => {
                   const message = `Halo Cheptebo! I would like to order:\n${cart.map(item => `- ${item.product.name} (x${item.quantity})`).join('\n')}\n\nTotal: Ksh ${cartTotal.toLocaleString()}`;
                   window.open(`https://wa.me/254722296370?text=${encodeURIComponent(message)}`, '_blank');
                 }}
-                className="w-full bg-cheptebo-dark text-white py-4 rounded-2xl font-bold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-cheptebo-dark text-white py-3 md:py-4 rounded-xl md:rounded-2xl font-bold text-sm md:text-base hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2"
               >
-                <MessageSquare className="w-6 h-6" /> Order via WhatsApp
+                <MessageSquare className="w-5 h-5 md:w-6 md:h-6" /> Order via WhatsApp
               </button>
             </div>
-            <p className="text-xs text-emerald-600 text-center italic">
+            <p className="text-[10px] md:text-xs text-emerald-600 text-center italic">
               Payments are secured via M-Pesa STK Push (IntaSend).
             </p>
           </div>
@@ -1444,8 +1444,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-emerald-950 font-sans selection:bg-emerald-200">
-      {/* Top Bar */}
-      <div className="bg-cheptebo-dark text-white py-1 text-[10px] font-bold uppercase tracking-[0.2em]">
+      {/* Top Bar - Hidden on mobile for app-like feel */}
+      <div className="hidden md:block bg-cheptebo-dark text-white py-1 text-[10px] font-bold uppercase tracking-[0.2em]">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5"><Phone className="w-3 h-3" /> +254 722 296370</span>
@@ -1457,11 +1457,14 @@ export default function App() {
         </div>
       </div>
 
-      {/* Header */}
+      {/* Header - More compact on mobile */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-emerald-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4 cursor-pointer" onClick={() => setActiveTab('home')}>
-            <div className="w-40 h-14 flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between relative">
+          <div 
+            className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center gap-3 md:gap-4 cursor-pointer" 
+            onClick={() => setActiveTab('home')}
+          >
+            <div className="w-32 h-10 md:w-40 md:h-14 flex items-center justify-center">
               <img 
                 src="https://lh3.googleusercontent.com/d/1lxWK_Z9UkvbyjmiWtCh5d-aUMRwoUtMh" 
                 alt="Cheptebo Logo" 
@@ -1475,7 +1478,7 @@ export default function App() {
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6 font-bold text-emerald-800 text-sm">
+          <nav className="hidden md:flex items-center gap-6 font-bold text-emerald-800 text-sm mx-auto">
             <button onClick={() => setActiveTab('home')} className={cn("hover:text-cheptebo-green transition-colors", activeTab === 'home' && "text-cheptebo-green")}>HOME</button>
             <button onClick={() => setActiveTab('shop')} className={cn("hover:text-cheptebo-green transition-colors", activeTab === 'shop' && "text-cheptebo-green")}>SHOP</button>
             <button onClick={() => setActiveTab('nursery')} className={cn("hover:text-cheptebo-green transition-colors", activeTab === 'nursery' && "text-cheptebo-green")}>NURSERY</button>
@@ -1483,14 +1486,14 @@ export default function App() {
             <button onClick={() => setActiveTab('hospitality')} className={cn("hover:text-cheptebo-green transition-colors", activeTab === 'hospitality' && "text-cheptebo-green")}>HOSPITALITY</button>
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4 ml-auto">
             <button 
               onClick={() => setActiveTab('cart')}
               className="relative p-2 hover:bg-emerald-50 rounded-full transition-colors"
             >
-              <ShoppingCart className="w-6 h-6 text-cheptebo-green" />
+              <ShoppingCart className="w-5 h-5 md:w-6 md:h-6 text-cheptebo-green" />
               {cart.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-cheptebo-gold text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
+                <span className="absolute top-0 right-0 bg-cheptebo-gold text-white text-[8px] md:text-[10px] font-bold w-4 h-4 md:w-5 md:h-5 flex items-center justify-center rounded-full border-2 border-white">
                   {cart.length}
                 </span>
               )}
@@ -1499,8 +1502,31 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      {/* Mobile Bottom Navigation */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-emerald-100 px-2 py-2 flex items-center justify-around shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        {[
+          { id: 'home', icon: LayoutDashboard, label: 'Home' },
+          { id: 'shop', icon: ShoppingBag, label: 'Shop' },
+          { id: 'nursery', icon: Sprout, label: 'Nursery' },
+          { id: 'livestock', icon: Bird, label: 'Livestock' },
+          { id: 'hospitality', icon: Hotel, label: 'Stay' },
+        ].map((item) => (
+          <button
+            key={item.id}
+            onClick={() => setActiveTab(item.id as Tab)}
+            className={cn(
+              "flex flex-col items-center gap-1 px-3 py-1 rounded-xl transition-all",
+              activeTab === item.id ? "text-cheptebo-green bg-emerald-50" : "text-emerald-700 opacity-60"
+            )}
+          >
+            <item.icon className="w-5 h-5" />
+            <span className="text-[10px] font-bold uppercase tracking-tighter">{item.label}</span>
+          </button>
+        ))}
+      </nav>
+
+      {/* Main Content - Added bottom padding for mobile nav */}
+      <main className="max-w-7xl mx-auto px-4 py-6 md:py-8 pb-24 md:pb-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -1611,46 +1637,47 @@ export default function App() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white w-full max-w-md rounded-3xl p-8 shadow-2xl space-y-6"
+              className="bg-white w-full max-w-sm rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-2xl space-y-5 md:space-y-6"
             >
               <div className="text-center space-y-2">
-                <div className="w-16 h-16 bg-emerald-100 text-cheptebo-green rounded-full flex items-center justify-center mx-auto">
-                  <CreditCard className="w-8 h-8" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-emerald-100 text-cheptebo-green rounded-full flex items-center justify-center mx-auto">
+                  <CreditCard className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-cheptebo-green">M-Pesa Payment</h3>
-                <p className="text-emerald-600">Enter your M-Pesa number to receive the STK Push.</p>
+                <h3 className="text-xl md:text-2xl font-serif font-bold text-cheptebo-green">M-Pesa Payment</h3>
+                <p className="text-xs md:text-sm text-emerald-600">Enter your M-Pesa number to receive the STK Push.</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-cheptebo-green uppercase tracking-wider">Phone Number</label>
+                  <label className="text-[10px] md:text-xs font-bold text-cheptebo-green uppercase tracking-wider">Phone Number</label>
                   <input 
                     type="tel" 
                     placeholder="07XX XXX XXX" 
-                    className="w-full p-4 bg-emerald-50 border-2 border-emerald-100 rounded-2xl focus:border-cheptebo-green outline-none transition-all font-bold"
+                    className="w-full p-3 md:p-4 bg-emerald-50 border-2 border-emerald-100 rounded-xl md:rounded-2xl focus:border-cheptebo-green outline-none transition-all font-bold text-sm md:text-base"
                   />
                 </div>
-                <div className="bg-emerald-50 p-4 rounded-2xl flex justify-between items-center">
-                  <span className="text-emerald-700 font-medium">Amount to Pay</span>
-                  <span className="text-xl font-bold text-cheptebo-green">Ksh {cartTotal.toLocaleString()}</span>
+                <div className="bg-emerald-50 p-3 md:p-4 rounded-xl md:rounded-2xl flex justify-between items-center">
+                  <span className="text-xs md:text-sm text-emerald-700 font-medium">Amount to Pay</span>
+                  <span className="text-lg md:text-xl font-bold text-cheptebo-green">Ksh {cartTotal.toLocaleString()}</span>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-3 md:gap-4">
                 <button 
                   onClick={() => setShowPayment(false)}
-                  className="flex-1 py-4 font-bold text-cheptebo-green hover:bg-emerald-50 rounded-2xl transition-all"
+                  className="flex-1 py-3 md:py-4 font-bold text-cheptebo-green hover:bg-emerald-50 rounded-xl md:rounded-2xl transition-all text-sm md:text-base"
                 >
                   Cancel
                 </button>
                 <button 
                   onClick={() => {
-                    alert('STK Push Sent! Please check your phone.');
+                    // In a real app, this would trigger the actual STK push
                     setShowPayment(false);
                     setCart([]);
                     setActiveTab('home');
+                    // We'll use a simple confirmation message in the UI instead of alert
                   }}
-                  className="flex-1 py-4 bg-cheptebo-green text-white font-bold rounded-2xl hover:bg-cheptebo-dark shadow-lg transition-all"
+                  className="flex-1 py-3 md:py-4 bg-cheptebo-green text-white font-bold rounded-xl md:rounded-2xl hover:bg-cheptebo-dark shadow-lg transition-all text-sm md:text-base"
                 >
                   Pay Now
                 </button>
